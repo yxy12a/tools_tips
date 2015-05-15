@@ -1,0 +1,12 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<< network tools >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+- tcpdump
+  tcpdump -i $eth_dev -e -nnvvvNXs 512 'ether src or dst $eth_mac and udp and port 67 and port 68'
+  tcpdump -i $eth_dev host $ip
+  tcpdump -i $eth_dev src host $ip
+  tcpdump -i $eth_dev net 10.10.10.0/24
+  tcpdump -i $eth_dev 'src host $ip or port 22'
+  tcpdump -i $eth_dev 'src host $ip and not port 22'
+  tcpdump -i $eth_dev  \( src host 10.10.10.2 and dst port 22 \) or \( src host 10.10.10.65 and dst port 80 \)
+  tcpdump -i $eth_dev icmp/arp/ip
+  
+-   
