@@ -9,4 +9,6 @@
   tcpdump -i $eth_dev  \( src host 10.10.10.2 and dst port 22 \) or \( src host 10.10.10.65 and dst port 80 \)
   tcpdump -i $eth_dev icmp/arp/ip
   
--   
+- nc
+  server side: nc -l $port_num > $file_from_client
+  client side: nc $server_ip $server_port_num < $file_to_upload_to_server
