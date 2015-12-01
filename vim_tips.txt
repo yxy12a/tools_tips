@@ -21,4 +21,27 @@
    Ctrl + ]
 5. 函数返回
    Ctrl + o  或者 Ctrl + t
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<< cscope >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1. 进入程序目录
+2. 执行find /home/you/projects/project -name '*.cpp' -name '*.c' -o -name "*.h" > ./cscope.files
+   注：find后面的路径要写成绝对路径，要不然在子路径下打开文件，然后跳转的时候，使用cscope就会出现找不到文件的问题（相对路径造成的）
+3. cscope -bkq -i cscope.files生成cscope.out文件
+4. 修改～／.vimrc:
+    if filereadable("cscope.out") 
+        cs add cscope.out 
+    endif
+
+5. 常用的命令：
+    ：cs find s ---- 查找C语言符号，即查找函数名、宏、枚举值等出现的地方
+　　：cs find g ---- 查找函数、宏、枚举等定义的位置，类似ctags所提供的功能
+　　：cs find d ---- 查找本函数调用的函数：cs find c ---- 查找调用本函数的函数
+　　：cs find t: ---- 查找指定的字符串
+　　：cs find e ---- 查找egrep模式，相当于egrep功能，但查找速度快多了
+　　：cs find f ---- 查找并打开文件，类似vim的find功能
+　　：cs find i ---- 查找包含本文件的文
+
+
+Reference:
+使用 vim + ctags + cscope + taglist 阅读源码: http://my.oschina.net/u/554995/blog/59927?fromerr=PeVu7ByY
  																	
