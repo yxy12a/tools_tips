@@ -1,7 +1,7 @@
 <<<<<<<<<<<<<<<<<<< sublime tips >>>>>>>>>>>>>>>>>>>>>>
 一共有四种 Goto ：
 cmd+p  文件定位
-cmd+;  词语定位 #
+cmd+p  词语定位 #
 cmd+r  函数定位 @
-cmd+g  行号定位 :
+cmd+p  行号定位 :
 比如 cmd+p 后，输入 util@parse 可以即时查询名字带 util 的文件中，以 parse 开头的函数
